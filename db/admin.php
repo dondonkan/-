@@ -66,15 +66,14 @@ class admin {
 
         $this->dbConn = $db->connect();
     }
-
+    
+    //ユーザーテーブル
     public function show_table(){
 
         $sql='SELECT * FROM login_system WHERE auth_type IS NULL;';
 
-        // PDOStatementクラスのインスタンスを生成します。
         $prepare = $this->dbConn->prepare($sql);
 
-        // プリペアドステートメントを実行する
         $prepare->execute();
         $rows =  $prepare->fetchAll(PDO::FETCH_ASSOC);
 
@@ -87,38 +86,40 @@ class admin {
         $prepare = $this->dbConn->prepare($sql);
 
         $prepare->bindValue(1, $this->id, PDO::PARAM_INT);
-
-        // プリペアドステートメントを実行する
+        
         $prepare->execute();
         $rows =  $prepare->fetch(PDO::FETCH_ASSOC);
 
         return $rows;
 
     }
-
+    
+    //アカウントの更新
     public function update(){
         $sql='UPDATE login_system SET mail = ?, password= ? WHERE id = ?';
-        // PDOStatementクラスのインスタンスを生成します。
+
         $prepare = $this->dbConn->prepare($sql);
     
         $prepare->bindValue(1, $this->mail, PDO::PARAM_STR);
         $prepare->bindValue(2, $this->password, PDO::PARAM_STR);
         $prepare->bindValue(3, $this->id, PDO::PARAM_INT);
-    
-        // プリペアドステートメントを実行する
+
+        
         $prepare->execute();
     
     }
-
+    
+    
+    //アカウント削除
     public function delete(){
 
         $sql='DELETE FROM login_system WHERE id = ?';
-        // PDOStatementクラスのインスタンスを生成します。
+
         $prepare = $this->dbConn->prepare($sql);
 
         $prepare->bindValue(1, $this->id, PDO::PARAM_INT);
 
-        // プリペアドステートメントを実行する
+
         $prepare->execute();
 
     }
