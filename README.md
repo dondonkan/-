@@ -28,7 +28,7 @@ phpとsqlの理解を深めるため、また、セキュリティについて�
 | password | varchar(255) | | 
 | auth_type  | tinyint |  デフォルトはNULL,1で管理者  |
 | fail_count | tinyint | 指定した回数でアカウントをロック  |
-| fail_time  | datatime |  ログインに失敗した時間 |
+| fail_time  | datatime |  デフォルトはNULL,ログインに失敗した時間 |
 
 # ファイル一覧
 
