@@ -88,7 +88,7 @@ if(is_array($userData) && count($userData) > 0){
 
         $userobj->update_time();
 
-        $_SESSION['message'] = "ログインに成功しました！a";
+        $_SESSION['message'] = "ログインに成功しました！";
         $_SESSION['user'] = $userData['mail'];
         $_SESSION['auth'] = true;
 
@@ -115,7 +115,7 @@ if(is_array($userData) && count($userData) > 0){
         $userobj->update_time();
 
 
-        $_SESSION['message'] = "ログインに成功しました！u";
+        $_SESSION['message'] = "ログインに成功しました！";
         $_SESSION['user'] = $userData['mail'];
 
         session_regenerate_id(TRUE);
