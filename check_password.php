@@ -18,14 +18,6 @@ if(!isset($_SESSION['user'])){
 }
 
 
-if(isset($_SESSION['auth'])){
-    $_SESSION['message'] = "Admin account";
-    header('Location: ./login.php');
-    die();
-}
-
-
-
 ?>
 
 <!DOCTYPE html>
