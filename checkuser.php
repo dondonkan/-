@@ -1,5 +1,4 @@
 <?php 
-require('db/db_access.php');
 require('db/users.php');
 
 session_start();
