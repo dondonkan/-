@@ -14,14 +14,6 @@ if(!isset($_SESSION['user'])){
     die();
 }
 
-
-if(isset($_SESSION['auth'])){
-    $_SESSION['message'] = "Admin account";
-    header('Location: ./login.php');
-    die();
-}
-
-
 $token = filter_input(INPUT_POST,'token');
 
 if(empty($_SESSION['token']) || !hash_equals(@$_SESSION['token'] ,$token)){
